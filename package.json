@@ -1,0 +1,42 @@
+{
+  "name": "electron-bulid-update",
+  "version": "1.0.2",
+  "description": "good",
+  "main": "main.js",
+  "author": "xyb",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0"
+  },
+  "dependencies": {
+    "electron-updater": "^5.0.5"
+  },
+  "scripts": {
+    "start": "electron .",
+    "electron:build": "electron-builder"
+  },
+  "build": {
+    "appId": "this.is.tasky", 
+    "productName": "XYBProduct",
+    "copyright": "Copyright © 2021 Alaso",
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "language": "2052",
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:9005/win32"
+      }
+    ]
+  }
+}
